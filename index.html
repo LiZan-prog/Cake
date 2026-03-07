@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sweet Cakes Shop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Sweet Cakes</h1>
+</header>
+
+<section id="menu">
+  <h2>Our Cakes</h2>
+  <div class="cake-card">
+    <img src="images/chocolate.jpg" alt="Chocolate Cake">
+    <p>Chocolate Cake - $10</p>
+  </div>
+  <div class="cake-card">
+    <img src="images/vanilla.jpg" alt="Vanilla Cake">
+    <p>Vanilla Cake - $8</p>
+  </div>
+</section>
+
+<section id="order">
+  <h2>Place Your Order</h2>
+  <form id="orderForm">
+    <input type="text" id="name" placeholder="Your Name" required><br><br>
+    <input type="text" id="cake" placeholder="Cake Type" required><br><br>
+    <input type="number" id="quantity" placeholder="Quantity" required><br><br>
+    <button type="submit">Submit Order</button>
+  </form>
+  <p id="response"></p>
+</section>
+
+<section id="recent-orders">
+  <h2>Recent Orders</h2>
+  <ul id="orders-list"></ul>
+</section>
+
+<script src="js/script.js"></script>
+</body>
+</html>
