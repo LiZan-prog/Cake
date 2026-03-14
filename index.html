@@ -3,205 +3,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cake Ordering - Fresh Baked Delights</title>
+  <title>Home Desk • Projects & Finance</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="font-['Poppins'] bg-gradient-to-br from-pink-50 to-purple-50 min-h-screen">
-  <header class="bg-white/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
+<body class="font-['Poppins'] bg-gradient-to-br from-slate-50 to-indigo-50 min-h-screen">
+  <header class="bg-white/70 backdrop-blur-md shadow-lg sticky top-0 z-50">
     <nav class="container mx-auto px-6 py-4">
-      <div class="flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-          <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
-            <span class="text-white font-bold text-lg">🍰</span>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-500 to-sky-500 flex items-center justify-center">
+            <span class="text-white text-xl">🖥️</span>
           </div>
-          <h1 class="text-2xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">CakeDelight</h1>
+          <div>
+            <h1 class="text-2xl font-bold text-slate-800">Home Desk</h1>
+            <p class="text-xs text-slate-500">Personal dashboard for projects, GitHub, finance and activity</p>
+          </div>
         </div>
-        <div class="hidden md:flex space-x-8">
-          <a href="#home" class="text-gray-700 hover:text-pink-600 transition-colors">Home</a>
-          <a href="#menu" class="text-gray-700 hover:text-pink-600 transition-colors">Menu</a>
-          <a href="#order" class="text-gray-700 hover:text-pink-600 transition-colors">Order</a>
-          <a href="#about" class="text-gray-700 hover:text-pink-600 transition-colors">About</a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+          <a href="#overview" class="hover:text-indigo-600 transition">Overview</a>
+          <a href="#github" class="hover:text-indigo-600 transition">GitHub</a>
+          <a href="#projects" class="hover:text-indigo-600 transition">Projects</a>
+          <a href="#finances" class="hover:text-indigo-600 transition">Finances</a>
+          <a href="#activity" class="hover:text-indigo-600 transition">Activity</a>
         </div>
       </div>
     </nav>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section id="home" class="relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-r from-pink-400/20 to-purple-400/20"></div>
-      <div class="container mx-auto px-6 py-20 relative">
-        <div class="text-center max-w-4xl mx-auto">
-          <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-            Fresh Baked Delights
-          </h1>
-          <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-            Indulge in our handcrafted cakes made with the finest ingredients. Order online for pickup or delivery.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#menu" class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-              View Our Menu
-            </a>
-            <a href="#order" class="border-2 border-pink-500 text-pink-600 px-8 py-4 rounded-full font-semibold hover:bg-pink-50 transition-colors">
-              Order Now
-            </a>
-          </div>
+  <main class="container mx-auto px-6 py-10">
+    <!-- Overview -->
+    <section id="overview" class="mb-16">
+      <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <div>
+          <h2 class="text-4xl font-bold text-slate-900">Welcome back,</h2>
+          <p class="mt-2 text-slate-600">Here’s a quick snapshot of your GitHub, projects, finances, and daily activity.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <button id="refreshBtn" class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 transition">
+            <span>Refresh</span>
+            <span class="inline-flex h-4 w-4 animate-spin rounded-full border-2 border-white/50 border-t-white"></span>
+          </button>
         </div>
       </div>
-      <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
-    </section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="py-20 bg-white">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Our Cake Menu</h2>
-          <p class="text-gray-600 text-lg max-w-2xl mx-auto">Choose from our selection of freshly baked cakes, each made with love and the finest ingredients.</p>
+      <div class="mt-10 grid gap-6 lg:grid-cols-4">
+        <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wide text-slate-400">GitHub Stars</p>
+              <p id="stars" class="mt-2 text-3xl font-semibold text-slate-900">—</p>
+            </div>
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 text-indigo-700">⭐</span>
+          </div>
+          <p class="mt-4 text-sm text-slate-500">Total stars across your repositories.</p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-            <div class="h-48 bg-gradient-to-r from-pink-200 to-pink-300 flex items-center justify-center">
-              <span class="text-6xl">🍰</span>
+
+        <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wide text-slate-400">Active Projects</p>
+              <p id="projectsCount" class="mt-2 text-3xl font-semibold text-slate-900">—</p>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">Chocolate Fudge Cake</h3>
-              <p class="text-gray-600 mb-4">Rich chocolate layers with creamy fudge frosting</p>
-              <div class="flex justify-between items-center">
-                <span class="text-2xl font-bold text-pink-600">$35</span>
-                <button class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors">Add to Cart</button>
-              </div>
-            </div>
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">🧩</span>
           </div>
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-            <div class="h-48 bg-gradient-to-r from-yellow-200 to-yellow-300 flex items-center justify-center">
-              <span class="text-6xl">🧁</span>
+          <p class="mt-4 text-sm text-slate-500">Projects you’re currently tracking.</p>
+        </div>
+
+        <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wide text-slate-400">Net Worth</p>
+              <p id="netWorth" class="mt-2 text-3xl font-semibold text-slate-900">—</p>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">Vanilla Cupcakes</h3>
-              <p class="text-gray-600 mb-4">Classic vanilla cupcakes with buttercream frosting</p>
-              <div class="flex justify-between items-center">
-                <span class="text-2xl font-bold text-pink-600">$4 each</span>
-                <button class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors">Add to Cart</button>
-              </div>
-            </div>
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-amber-100 text-amber-700">💰</span>
           </div>
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-            <div class="h-48 bg-gradient-to-r from-red-200 to-red-300 flex items-center justify-center">
-              <span class="text-6xl">🍓</span>
+          <p class="mt-4 text-sm text-slate-500">Estimated total net worth based on tracked accounts.</p>
+        </div>
+
+        <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wide text-slate-400">This Week</p>
+              <p id="activityCount" class="mt-2 text-3xl font-semibold text-slate-900">—</p>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">Strawberry Shortcake</h3>
-              <p class="text-gray-600 mb-4">Fresh strawberries layered with whipped cream</p>
-              <div class="flex justify-between items-center">
-                <span class="text-2xl font-bold text-pink-600">$28</span>
-                <button class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors">Add to Cart</button>
-              </div>
-            </div>
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-pink-100 text-pink-700">📈</span>
           </div>
+          <p class="mt-4 text-sm text-slate-500">Your tracked activity count for the week.</p>
         </div>
       </div>
     </section>
 
-    <!-- Order Section -->
-    <section id="order" class="py-20 bg-gradient-to-r from-pink-50 to-purple-50">
-      <div class="container mx-auto px-6">
-        <div class="max-w-2xl mx-auto">
-          <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Place Your Order</h2>
-            <p class="text-gray-600 text-lg">Fill out the form below to place your cake order</p>
+    <!-- GitHub Section -->
+    <section id="github" class="mb-16">
+      <div class="flex items-center justify-between">
+        <h3 class="text-2xl font-semibold text-slate-900">GitHub Snapshot</h3>
+        <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-700">View on GitHub →</a>
+      </div>
+      <div class="mt-6 grid gap-6 lg:grid-cols-3">
+        <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Top Repository</h4>
+          <div class="mt-4">
+            <p id="topRepoName" class="text-lg font-semibold text-slate-900">—</p>
+            <p id="topRepoDesc" class="mt-1 text-sm text-slate-500">—</p>
           </div>
-          <div class="bg-white rounded-3xl shadow-xl p-8">
-            <form id="orderForm" class="space-y-6">
-              <div>
-                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
-                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all">
-              </div>
-              <div>
-                <label for="cake" class="block text-sm font-medium text-gray-700 mb-2">Cake Type</label>
-                <select id="cake" name="cake" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all">
-                  <option value="">Select a cake</option>
-                  <option value="Chocolate Fudge Cake">Chocolate Fudge Cake</option>
-                  <option value="Vanilla Cupcakes">Vanilla Cupcakes</option>
-                  <option value="Strawberry Shortcake">Strawberry Shortcake</option>
-                </select>
-              </div>
-              <div>
-                <label for="quantity" class="block text-sm font-medium text-gray-700 mb-2">Quantity</label>
-                <input type="number" id="quantity" name="quantity" min="1" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all">
-              </div>
-              <button type="submit" class="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white py-4 px-6 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-                Place Order
-              </button>
-            </form>
-            <div id="response" class="mt-6 text-center text-green-600 font-medium"></div>
+          <div class="mt-4 flex items-center gap-4 text-sm text-slate-600">
+            <span id="topRepoStars" class="inline-flex items-center gap-1">⭐ —</span>
+            <span id="topRepoForks" class="inline-flex items-center gap-1">🍴 —</span>
           </div>
+        </div>
+        <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Recent Commits</h4>
+          <ul id="commitList" class="mt-4 space-y-3 text-sm text-slate-700">
+            <li class="rounded-xl bg-slate-50 p-4">Loading commits…</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Open Issues</h4>
+          <ul id="issueList" class="mt-4 space-y-3 text-sm text-slate-700">
+            <li class="rounded-xl bg-slate-50 p-4">Loading issues…</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Recent Orders -->
-    <section class="py-20 bg-white">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Recent Orders</h2>
-          <p class="text-gray-600 text-lg">See what others have ordered recently</p>
+    <!-- Projects Section -->
+    <section id="projects" class="mb-16">
+      <div class="flex items-center justify-between">
+        <h3 class="text-2xl font-semibold text-slate-900">Active Projects</h3>
+        <button id="addProject" class="rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white hover:bg-emerald-700 transition">+ Add Project</button>
+      </div>
+      <div class="mt-6 grid gap-6 lg:grid-cols-2">
+        <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <h4 class="text-lg font-semibold text-slate-900">Project Roadmap</h4>
+          <p class="mt-2 text-sm text-slate-500">Track progress and key milestones.</p>
+          <div id="projectList" class="mt-6 space-y-4"></div>
         </div>
-        <div class="max-w-2xl mx-auto">
-          <div id="orders-list" class="space-y-4">
-            <!-- Orders will be loaded here -->
-          </div>
+        <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <h4 class="text-lg font-semibold text-slate-900">Upcoming Milestones</h4>
+          <ul id="milestoneList" class="mt-4 space-y-4 text-sm text-slate-700"></ul>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gradient-to-r from-purple-50 to-pink-50">
-      <div class="container mx-auto px-6">
-        <div class="text-center max-w-4xl mx-auto">
-          <h2 class="text-4xl font-bold mb-8 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">About CakeDelight</h2>
-          <p class="text-lg text-gray-600 leading-relaxed mb-8">
-            At CakeDelight, we believe that every celebration deserves a delicious cake. Our master bakers use only the finest ingredients to create cakes that not only look beautiful but taste incredible. From birthdays to weddings, we've got you covered with our wide selection of flavors and designs.
-          </p>
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="text-center">
-              <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-white text-2xl">🥄</span>
-              </div>
-              <h3 class="text-xl font-semibold mb-2">Fresh Ingredients</h3>
-              <p class="text-gray-600">We use only the freshest, highest quality ingredients in every cake we bake.</p>
-            </div>
-            <div class="text-center">
-              <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-white text-2xl">👨‍🍳</span>
-              </div>
-              <h3 class="text-xl font-semibold mb-2">Expert Bakers</h3>
-              <p class="text-gray-600">Our team of skilled bakers has years of experience creating perfect cakes.</p>
-            </div>
-            <div class="text-center">
-              <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-white text-2xl">🚚</span>
-              </div>
-              <h3 class="text-xl font-semibold mb-2">Fast Delivery</h3>
-              <p class="text-gray-600">Quick and reliable delivery service to get your cake to you on time.</p>
-            </div>
-          </div>
+    <!-- Finance Section -->
+    <section id="finances" class="mb-16">
+      <div class="flex items-center justify-between">
+        <h3 class="text-2xl font-semibold text-slate-900">Finance Snapshot</h3>
+        <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-700">View reports →</a>
+      </div>
+      <div class="mt-6 grid gap-6 lg:grid-cols-3">
+        <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Monthly Income</h4>
+          <p id="monthlyIncome" class="mt-4 text-3xl font-semibold text-slate-900">—</p>
+          <p class="mt-2 text-sm text-slate-500">Income tracked from all sources</p>
         </div>
+        <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Expenses</h4>
+          <p id="monthlyExpenses" class="mt-4 text-3xl font-semibold text-slate-900">—</p>
+          <p class="mt-2 text-sm text-slate-500">Total expenses this month</p>
+        </div>
+        <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Savings Rate</h4>
+          <p id="savingsRate" class="mt-4 text-3xl font-semibold text-slate-900">—</p>
+          <p class="mt-2 text-sm text-slate-500">Percent saved vs earned</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activity Section -->
+    <section id="activity" class="mb-16">
+      <div class="flex items-center justify-between">
+        <h3 class="text-2xl font-semibold text-slate-900">Recent Activity</h3>
+        <span class="text-sm text-slate-500">Updated just now</span>
+      </div>
+      <div class="mt-6 space-y-4">
+        <div id="activityList" class="space-y-4"></div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-gray-900 text-white py-12">
+  <footer class="bg-slate-900 text-white py-10">
     <div class="container mx-auto px-6 text-center">
-      <div class="flex items-center justify-center space-x-2 mb-4">
-        <div class="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
-          <span class="text-white font-bold">🍰</span>
-        </div>
-        <span class="text-xl font-bold">CakeDelight</span>
-      </div>
-      <p class="text-gray-400 mb-4">Bringing sweetness to your celebrations since 2024</p>
-      <p class="text-sm text-gray-500">© 2024 CakeDelight. All rights reserved.</p>
+      <p class="text-sm text-slate-400">© 2026 Home Desk. All data shown is for demo purposes only.</p>
     </div>
   </footer>
 
